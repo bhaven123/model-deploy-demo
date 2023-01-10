@@ -8,7 +8,7 @@ This repository is a demonstration for deploying Machine Learning API as a Docke
 
 Steps to **run** the docker container:
 
-- First clone the repository using the command `git clone repo-url `. Open it using **Visual Studio Code** or any editor of our choosing.
+- First, we clone the repository using the command `git clone repository-url `. We can pen it using **Visual Studio Code** or any editor of our choosing.
 - We need to have docker installed on our system. The docker image can either be created (in the root directory which has the Dockerfile) using the command `docker build -t name-of-your-choice .` or pulled from docker hub using the command `docker pull bhaven123/ml-api-demo:latest ` .
 - Once we have the image, we can run it inside a container using the command `docker run -p 80:80 image-name `.
 - We can see the container running on the port 80 by typing the command `http://0.0.0.0:80 `in the brower's address bar.
