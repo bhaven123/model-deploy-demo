@@ -2,13 +2,13 @@
 
 ## Overview
 
-This repository is a demonstration for deploying Machine Learning API as a Docker Image which can be run inside a Docker container. It uses Inference models from the [huggingface](https://huggingface.co/models) model hub.
+This repository is a demonstration for deploying Machine Learning API as a Docker Image which can be run inside a Docker Container. It uses Inference models from the [huggingface](https://huggingface.co/models) model hub.
 
 ## Installing and Running the Demo
 
 Steps to **run** the docker container:
 
-- First, we clone the repository using the command `git clone repository-url `. We can pen it using **Visual Studio Code** or any editor of our choosing.
+- First, we clone the repository using the command `git clone repository-url `. We can open it using **Visual Studio Code** or any editor of our choosing.
 - We need to have docker installed on our system. The docker image can either be created (in the root directory which has the Dockerfile) using the command `docker build -t name-of-your-choice .` or pulled from docker hub using the command `docker pull bhaven123/ml-api-demo:latest ` .
 - Once we have the image, we can run it inside a container using the command `docker run -p 80:80 image-name `.
 - We can see the container running on the port 80 by typing the command `http://0.0.0.0:80 `in the brower's address bar.
@@ -34,6 +34,11 @@ Now that we have our container running, we can start making POST requests to it.
 - Using **Curl**
 
   - We can also use curl to process our POST request, using the command `curl -X 'POST' \ 'http://0.0.0.0:80/predict' \ -H 'accept: application/json' \ -H 'Content-Type: multipart/form-data' \ -F 'in_file=@chow.jpeg;type=image/jpeg'` which can also be seen in the FastAPI Swagger UI.## ![1673392955004](image/README/1673392955004.png)
+
+## Reasons for choosing the model
+
+- The model that I chose was the [Vision Transformer (ViT)](https://huggingface.co/google/vit-base-patch16-224) model which is pre-trained on the ImageNet-21k dataset and fine-tuned on ImageNet 2012 dataset. It is a transformer encoder model which is pretrained in a supervised fashion on a large collection of images.
+- I chose this model because it belongs to the category of Image Classification. I have had an interest in Image Classification since I started learning about Computer Vision and Machine Learning. The idea of training a machine to identify or classify real-life objects and everyday things is quite fascinating. As a result, this model drew my attention over the others.
 
 ## Helpful Links
 
