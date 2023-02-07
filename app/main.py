@@ -3,14 +3,16 @@ from fastapi import FastAPI, UploadFile, File
 from app.model.model import query
 import shutil
 
+# Declaring the FASTAPI app
 app = FastAPI()
 
-
+# Getting home route
 @app.get("/")
 def home():
     return {"statusText": "OK"}
 
 
+# Posting to predict route
 @app.post("/predict")
 async def predict(in_file: UploadFile = File(...)):
     with open(f"{in_file.filename}", "wb") as out_file:

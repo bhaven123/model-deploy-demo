@@ -2,12 +2,12 @@
 import requests
 import json
 
-# HuggingFace Inference API
+# HuggingFace Inference API authentication
 API_URL = "https://api-inference.huggingface.co/models/google/vit-base-patch16-224"
 API_TOKEN = "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"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
-
+# Sending an input image to the Inference API model for prediction
 def query(filename: str):
     with open(filename, "rb") as f:
         data = f.read()
